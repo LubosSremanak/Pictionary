@@ -1,0 +1,54 @@
+<section id="lobby">
+  <div class="room-link">
+    <button matTooltip="Click to copy" [cdkCopyToClipboard]="roomId" mat-button color="primary">{{roomId}}</button>
+  </div>
+  <div class="room-link">
+    <button (click)="startGame()" [class.no-operator]="!isOperator" mat-button color="primary">Začať hru</button>
+  </div>
+
+  <div class="lobby-form">
+    <mat-card *ngFor="let player of players" class="avatar-card">
+      <mat-card-header class="avatar-card-header">
+        <mat-card-title class="card-title">
+          {{player.name}}
+          <mat-icon [inline]="true" *ngIf="player.operator">star</mat-icon>
+        </mat-card-title>
+      </mat-card-header>
+      <div class="image-container">
+        <img mat-card-image class="avatar-image"
+             alt="Avatar" [src]="player.avatarUrl">
+      </div>
+      <div class="settings" [class.no-operator]="!isOperator||!player.operator">
+        <mat-form-field appearance="fill">
+          <mat-label>Počet kôl</mat-label>
+          <mat-select (selectionChange)="setRounds($event)">
+            <mat-option value="3">
+              3
+            </mat-option>
+            <mat-option value="5">
+              5
+            </mat-option>
+            <mat-option value="10">
+              10
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Limit kola</mat-label>
+          <mat-select (selectionChange)="setRoundLimit($event)">
+            <mat-option value="40">
+              40s
+            </mat-option>
+            <mat-option value="50">
+              50s
+            </mat-option>
+            <mat-option value="60">
+              60s
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </mat-card>
+  </div>
+</section>

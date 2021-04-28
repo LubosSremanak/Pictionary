@@ -1,0 +1,34 @@
+<div id="panel">
+  <div #colorsPanel class="colors panel-section">
+    <div *ngFor="let color of this.colors; let i=index" class="color-picker-container">
+      <input #colorPicker (click)="chooseColor(i,colorsPanel)" (input)="getColor(colorPicker,i,colorsPanel);" [id]="i"
+             class="color-picker-hidden" type="color">
+      <div (click)="colorPicker.click()" [style]="this.actualPickerColors[i]"
+           class="color-picker"></div>
+    </div>
+  </div>
+  <div class="tools panel-section">
+    <button #brush (click)="brushClick(rubber,fill)" aria-label="brush" mat-icon-button>
+      <mat-icon [inline]="true" svgIcon="brushLS"></mat-icon>
+    </button>
+    <button #rubber (click)="rubberClick(rubber,fill)" aria-label="rubber" mat-icon-button>
+      <mat-icon [inline]="true" svgIcon="rubberLS"></mat-icon>
+    </button>
+    <button #fill (click)="fillCLick(fill,rubber)" aria-label="fill" mat-icon-button>
+      <mat-icon [inline]="true" svgIcon="fillLS"></mat-icon>
+    </button>
+    <button #deleteAll (click)="deleteAllClick(fill,rubber)" aria-label="deleteAll" mat-icon-button>
+      <mat-icon [inline]="true" svgIcon="deleteAllLS"></mat-icon>
+    </button>
+  </div>
+  <div class="tool-stroke panel-section">
+    <div #stroke4 [style]="'backgroundColor:'+this.brush._getHostElement().style.getPropertyValue('color')"
+         (click)="this.brushWidth.emit(20);" class="stroke stroke4"></div>
+    <div #stroke3 [style]="'backgroundColor:'+this.brush._getHostElement().style.getPropertyValue('color')"
+         (click)="this.brushWidth.emit(15)" class="stroke stroke3"></div>
+    <div #stroke2 [style]="'backgroundColor:'+this.brush._getHostElement().style.getPropertyValue('color')"
+         (click)="this.brushWidth.emit(5);" class="stroke stroke2"></div>
+    <div #stroke1 [style]="'backgroundColor:'+this.brush._getHostElement().style.getPropertyValue('color')"
+         (click)="this.brushWidth.emit(2);" class="stroke stroke1"></div>
+  </div>
+</div>

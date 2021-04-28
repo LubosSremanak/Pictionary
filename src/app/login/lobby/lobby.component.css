@@ -1,0 +1,77 @@
+#lobby {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+#lobby .room-link {
+  margin-top: 10px;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#lobby .lobby-form {
+  margin-top: 100px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#lobby .image-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+#lobby .avatar-card {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#lobby .avatar-card .avatar-image {
+  border-radius: 25px;
+  margin-bottom: 0;
+  height: 250px;
+  width: 250px;
+}
+
+#lobby .avatar-card .avatar-card-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin: 0;
+}
+
+
+#lobby .lobby-form .avatar-card {
+  height: fit-content;
+  width: fit-content;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.8)
+}
+
+.card-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-operator {
+  display: none;
+}
+
+.settings {
+  margin-top: 30px;
+}
+
+.settings :first-child {
+  margin-right: 5px;
+}

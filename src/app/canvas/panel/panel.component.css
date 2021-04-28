@@ -1,0 +1,104 @@
+#panel {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+#panel .colors {
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.8)
+
+}
+
+#panel .colors .color-picker-container {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  width: fit-content;
+  margin: 5px 0 5px 0;
+}
+
+.color-picker-hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+#panel .color-picker {
+  border-radius: 50%;
+  padding: 5px;
+  width: 2vh;
+  height: 2vh;
+  transition: transform 0.2s;
+}
+
+#panel .color-picker:hover, #panel .tools button:hover, .stroke:hover {
+  cursor: pointer;
+  transform: scale(1.4);
+}
+
+#panel .tools {
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.8)
+}
+
+#panel .tools button {
+  width: 40px;
+  height: 35px;
+  padding: 5px;
+  margin: 0 0 10px 0;
+  transition: transform 0.2s;
+}
+
+.panel-section {
+  display: flex;
+  justify-content: center;
+  width: 35px;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px;
+  border-radius: 24px;
+  margin-bottom: 10px;
+}
+
+.tool-stroke {
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.8)
+}
+
+.tool-stroke .stroke {
+  border-radius: 50%;
+  background-color: black;
+  padding: 5px;
+  width: 2vh;
+  height: 2vh;
+  transition: transform 0.2s;
+  margin: 5px 0 5px 0;
+}
+
+.tool-stroke .stroke1 {
+  width: 2px;
+  height: 2px;
+
+}
+
+.tool-stroke .stroke2 {
+  width: 5px;
+  height: 5px;
+}
+
+.tool-stroke .stroke3 {
+  width: 15px;
+  height: 15px;
+}
+
+.tool-stroke .stroke4 {
+  width: 20px;
+  height: 20px;
+}
+

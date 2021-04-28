@@ -1,0 +1,20 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$product-red: mat-palette($mat-gray, 900);
+$product-red-accent: mat-palette($mat-gray, 200);
+$product-red-warn: mat-palette($mat-red);
+$product-red-success: mat-palette($mat-light-green);
+$product-red-theme: mat-light-theme((
+  color: (
+    primary: $product-red,
+    accent: $product-red-accent,
+    warn: $product-red-warn,
+    success:$product-red-success
+  )
+));
+
+@include angular-material-theme($product-red-theme);
+
+

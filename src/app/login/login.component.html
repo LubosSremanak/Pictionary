@@ -1,0 +1,38 @@
+<div id="login">
+  <div class="login-form">
+    <mat-card class="avatar-card">
+      <mat-card-header class="avatar-card-header">
+        <mat-card-title>
+          <mat-form-field class="input-field">
+            <mat-label>Meno</mat-label>
+            <input (input)="setName($event)" matInput placeholder="Meno hráča" value="Hráč" minlength="1">
+          </mat-form-field>
+        </mat-card-title>
+      </mat-card-header>
+      <div class="image-container">
+        <img mat-card-image class="avatar-image" [src]="avatarUrl?avatarUrl:'/assets/images/defaultAvatar.svg'"
+             alt="Avatar">
+      </div>
+
+      <mat-card-actions class="avatar-card-actions">
+        <button (click)="regenerateAvatar()" mat-icon-button>
+          <mat-icon>
+            repeat
+          </mat-icon>
+        </button>
+        <div class="sex">
+          <mat-radio-group color="primary" class="sex" [(ngModel)]="this.sex"
+                           (change)="regenerateAvatar()">
+            <mat-radio-button [checked]="true" [value]="0">Muž</mat-radio-button>
+            <mat-radio-button [value]="1">Žena</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <button (click)="createRoom()" color="primary" mat-raised-button>
+          <span *ngIf="!roomId">Vytvoriť miestnosť</span>
+          <span *ngIf="roomId">Pripojiť sa</span>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+

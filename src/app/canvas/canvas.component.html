@@ -1,0 +1,15 @@
+<div id="canvas-tools-container">
+  <app-canvas-panel *ngIf="isDrawer" (actualColor)="setActualColor($event)" (brushWidth)="setBrushWidth($event)"
+                    (deleteAll)="onDeleteCanvas()"
+                    (isRubber)="setMode($event)" (fill)="fillObject($event)">
+  </app-canvas-panel>
+  <div [class.hide]="!isDrawer" #canvasContainer id="canvas-container">
+    <ko-stage #stage [config]="configStage">
+      <ko-layer #layer>
+      </ko-layer>
+    </ko-stage>
+  </div>
+  <div [class.hide]="isDrawer" class="blocked" #canvasContainerView id="canvas-container-view">
+  <img #canvasImageView class="canvas-container-view-image" src="../../assets/images/canvas.jpg" alt="canvas-view">
+  </div>
+</div>

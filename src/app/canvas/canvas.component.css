@@ -1,0 +1,32 @@
+#canvas-tools-container {
+  display: flex;
+  width: fit-content;
+}
+
+#canvas-container {
+  max-width: 100%;
+  height: auto;
+  border: 5px solid rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+}
+
+#canvas-container-view {
+  max-width: 100%;
+  height: auto;
+  border: 5px solid rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+}
+
+.canvas-container-view-image {
+
+}
+
+.blocked {
+  pointer-events: none;
+}
+
+.hide {
+  display: none;
+}

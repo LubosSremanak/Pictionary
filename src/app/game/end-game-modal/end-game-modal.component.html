@@ -1,0 +1,23 @@
+<div id="winner-modal">
+  <h1>Víťaz</h1>
+  <mat-card class="avatar-card">
+    <mat-card-header class="avatar-card-header">
+      <mat-card-title class="card-title">
+        {{data.name}}
+      </mat-card-title>
+    </mat-card-header>
+    <div class="image-container">
+      <img mat-card-image class="avatar-image"
+           alt="Avatar" [src]="data.avatarUrl">
+    </div>
+    <mat-card-footer class="avatar-card-footer">
+      <mat-card-title class="card-title">
+        Body:{{data.points}}
+      </mat-card-title>
+    </mat-card-footer>
+    <mat-icon class="drawer" *ngIf="data.drawer">brush</mat-icon>
+    <div class="rank">
+      {{1}}
+    </div>
+  </mat-card>
+</div>

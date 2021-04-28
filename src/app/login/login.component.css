@@ -1,0 +1,74 @@
+#login {
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+#login .login-form {
+  margin-top: 50px;
+  min-width: 20vw;
+}
+
+#login .input-field {
+  width: 100%;
+}
+
+#login .avatar-card {
+  height: auto;
+  width: 400px;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.8)
+}
+
+#login .image-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+
+#login .avatar-card .avatar-image {
+  border-radius: 25px;
+  margin-bottom: 0;
+  height: 250px;
+  width: 250px;
+}
+
+#login .avatar-card .avatar-card-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin: 0;
+}
+
+#login .avatar-card .avatar-card-actions {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+#login .avatar-card .avatar-card-actions .sex {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
+#login .avatar-card .avatar-card-actions .sex :first-child {
+  margin-right: 10px;
+}
+
+#login .login-form {
+
+}

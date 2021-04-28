@@ -1,0 +1,48 @@
+<div id="game-container">
+  <section id="game-players">
+    <mat-card *ngFor="let player of allPlayers; let i=index" class="avatar-card">
+      <mat-card-header class="avatar-card-header">
+        <mat-card-title class="card-title">
+          {{formatName(player.name)}}
+        </mat-card-title>
+      </mat-card-header>
+      <div class="image-container">
+        <img mat-card-image class="avatar-image"
+             alt="Avatar" [src]="player.avatarUrl">
+      </div>
+      <mat-card-footer class="avatar-card-footer">
+        <mat-card-title class="card-title">
+          Body:{{player.points}}
+        </mat-card-title>
+      </mat-card-footer>
+      <mat-icon class="drawer" *ngIf="player.drawer">brush</mat-icon>
+      <div class="rank">
+        {{i + 1}}
+      </div>
+    </mat-card>
+  </section>
+  <section id="game-canvas">
+    <div id="game-values">
+      <span>Kolo:&nbsp;</span>
+      <span class="round" #round>1</span><span>&nbsp;/</span>
+      <span class="rounds" #rounds>1</span>
+      <span #word class="word"></span><span>Čas:</span>
+      <span class="timer" #timer>00:00</span>
+
+    </div>
+
+    <app-canvas [isDrawer]="isDrawer"></app-canvas>
+  </section>
+  <section id="game-chat">
+    <textarea [class.correct]="correctWords" class="chat-area scroll" #textArea matInput readonly></textarea>
+    <mat-form-field class="chat-input-field">
+      <input [disabled]="isDrawer||correctWords" (keyup.enter)="sendMessage(textArea,messageInput)" #messageInput
+             matInput>
+      <button [class.hidden]="isDrawer||correctWords" mat-button matSuffix mat-icon-button aria-label="send"
+              (click)="sendMessage(textArea,messageInput)">
+        <mat-icon>send</mat-icon>
+      </button>
+    </mat-form-field>
+  </section>
+</div>
+
